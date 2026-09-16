@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VibeSync Headphones — Lightweight Landing Clone</title>
+  <meta name="description">
+
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container" id="page">
+    <header>
+      <div class="brand">
+        <div class="logo">VS</div>
+        <div>
+          <div style="font-weight:800">VibeSync</div>
+          <div style="font-size:12px;color:var(--muted)">Premium Audio</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <button class="ghost" id="themeToggle" aria-pressed="false" title="Toggle dark mode">🌙</button>
+        <button class="cta cart" id="addToCartBtn" aria-label="Add to cart">Buy <span class="cart-count"
+            id="cartCount">0</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card fade-up" id="heroCard">
+          <span class="eyebrow">New — 2025</span>
+          <h1>Lightweight, Premium sound. Heavy on experience.</h1>
+          <p class="lead">VibeSync delivers studio-grade audio with 40 hours of battery, whisper-light comfort, and
+            adaptive
+            noise control — designed for every day listening, Intense gaming.</p>
+
+          <div class="feature-list" aria-hidden>
+            <div class="feature">40hr battery</div>
+            <div class="feature">Active Noise Control</div>
+            <div class="feature">USB‑C fast charge</div>
+            <div class="feature">Wired or Wireless</div>
+            <div class="feature">Waterproof</div>
+            <div class="feature">Quick 10-min charging</div>
+          </div>
+
+          <div style="height:18px"></div>
+
+          <div class="form-row" style="align-items:center">
+            <input type="email" id="emailInput" placeholder="Enter your email" aria-label="email for updates">
+            <button class="cta" id="notifyBtn">Notify me</button>
+          </div>
+
+          <p id="notifyMsg" style="font-size:13px;color:var(--muted);margin-top:10px"></p>
+        </div>
+
+        <div class="product-mock fade-up" id="mock">
+          <div class="product pulse">
+            <img src="headset.png">
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <div class="grid">
+          <div class="card fade-up">
+            <img src="Noise.png" width="300px" height="300px">
+            <h3>Adaptive Noise Control</h3>
+            <p style="color:var(--muted)">Switches between full ANC and ambient modes to keep you focused or aware of
+              surroundings.</p>
+          </div>
+          <div class="card fade-up">
+            <img src="comfortable.webp" width="315px" height="300px">
+            <h3>Comfort-first design</h3>
+            <p style="color:var(--muted)">Featherweight memory foam ear pads and a breathable headband for all-day wear.
+            </p>
+          </div>
+          <div class="card fade-up">
+            <img src="hiresm.jpg" width="315px" height="300px">
+            <h3>Hi‑Res Wireless</h3>
+            <p style="color:var(--muted)">Low-latency codec for crystal-clear calls and immersive music experiences.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <h2 style="margin-bottom:12px">Choose your VibeSync</h2>
+        <div class="grid">
+          <div class="card fade-up">
+            <img src="stand.png" width="300px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>Standard</strong>
+              <div class="price">&#8377;1499</div>
+            </div>
+            <p style="color:var(--muted)">Great sound for everyday listeners.</p>
+            <div style="height:10px"></div>
+            <button class="cta" data-price="1499">Select</button>
+          </div>
+          <div class="card fade-up">
+            <img src="pro.png" width="300px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>Pro</strong>
+              <div class="price">&#8377;2499</div>
+            </div>
+            <p style="color:var(--muted)">ANC + extended battery.</p>
+            <div style="height:10px"></div>
+            <button class="cta" data-price="2499">Select</button>
+          </div>
+          <div class="card fade-up">
+            <img src="bundle.webp" width="300px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>Bundle</strong>
+              <div class="price">&#8377;3499</div>
+            </div>
+            <p style="color:var(--muted)">Two pairs + premium case.</p>
+            <div style="height:10px"></div>
+            <button class="cta" data-price="3499">Select</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <h2 style="margin-bottom:12px">What users say</h2>
+        <div class="card fade-up">
+          <strong>"Fantastic battery life and comfy for long flights."</strong>
+          <p style="color:var(--muted)">— Alisha P., happy customer</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© VibeSync 2025</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#" style="color:var(--muted);text-decoration:none">Privacy</a>
+        <a href="#" style="color:var(--muted);text-decoration:none">Terms</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Small helper: animate fade-up elements when in viewport
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOptions = { threshold: 0.15 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      })
+    }, appearOptions);
+    faders.forEach(el => appearOnScroll.observe(el));
+
+    // Theme toggle (persist to localStorage)
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function setTheme(t) {
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.setAttribute('aria-pressed', 'true');
+        themeToggle.textContent = '☀️';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeToggle.setAttribute('aria-pressed', 'false');
+        themeToggle.textContent = '🌙';
+      }
+      localStorage.setItem('luna-theme', t);
+    }
+    // initialize
+    const saved = localStorage.getItem('luna-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(saved === 'dark' ? 'dark' : 'light');
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      setTheme(isDark ? 'light' : 'dark');
+    });
+
+    // Email capture simple validation
+    const emailInput = document.getElementById('emailInput');
+    const notifyBtn = document.getElementById('notifyBtn');
+    const notifyMsg = document.getElementById('notifyMsg');
+    notifyBtn.addEventListener('click', () => {
+      const email = emailInput.value.trim();
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!re.test(email)) {
+        notifyMsg.textContent = 'Please enter a valid email.';
+        notifyMsg.style.color = 'crimson';
+        return;
+      }
+      // simulate success
+      notifyMsg.style.color = 'var(--muted)';
+      notifyMsg.textContent = `Thanks — we will notify ${email} when Luna is available.`;
+      emailInput.value = '';
+    });
+
+    // Add to cart counter
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const cartCount = document.getElementById('cartCount');
+    let count = parseInt(localStorage.getItem('luna-cart') || '0', 10);
+    cartCount.textContent = count;
+    addToCartBtn.addEventListener('click', () => {
+      count = count + 1;
+      cartCount.textContent = count;
+      localStorage.setItem('Vibesync-cart', String(count));
+      // small animation
+      addToCartBtn.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.05)' }, { transform: 'scale(1)' }], { duration: 250 });
+    });
+
+    // Pricing select buttons (simple interaction)
+    document.querySelectorAll('[data-price]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const price = e.currentTarget.getAttribute('data-price');
+        alert('You selected the plan for Rs. ' + price + '. This is a static demo.');
+      });
+    });
+
+    // Smooth in-page scrolling for nav links
+    document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+
+</html>
